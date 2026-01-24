@@ -568,5 +568,15 @@
     "name": "wordle",
     "url": "/g/wordle/",
     "logo": "g/wordle/IMG_4645.jpeg"
+  },
+  {
+    "name": "drive mad winter",
+    "id": "dmw",
+    "description": "",
+    "category": "",
+    "path": "/g/dmw/",
+    "logo": "/g/dmw/webapp/favicon.ico",
+    "featured": false,
+    "rating": 4.5
   }
 ]

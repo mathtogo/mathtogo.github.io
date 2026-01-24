@@ -44,14 +44,14 @@ for game in "$GAMES_DIR"/*; do
         game_url="/$GAMES_DIR/$(echo "$game_name" | tr '[:upper:]' '[:lower:]')/"
         logo_rel="${logo_file#./}"
         
-        exists=$(jq --arg id "$game_id" --arg url "$game_url" '[.[] | select(.id==$id or .url==$url)] | length' "$JSON_FILE")
+        exists=$(jq --arg id "$game_id" --arg path "$game_url" '[.[] | select(.id==$id or .path==$path)] | length' "$JSON_FILE")
         
         if [ "$exists" -eq 0 ]; then
             jq --arg id "$game_id" \
                --arg name "$game_name" \
-               --arg url "$game_url" \
-               --arg logo "$logo_rel" \
-               '. + [{id: $id, name: $name, url: $url, logo: $logo}]' "$JSON_FILE" > "$TMP"
+               --arg path "$game_url" \
+               --arg logo "/$logo_rel" \
+               '. + [{name: $name, id: $id, description: "", category: "", path: $path, logo: $logo, featured: false, rating: 0}]' "$JSON_FILE" > "$TMP"
             mv "$TMP" "$JSON_FILE"
         fi
     fi
