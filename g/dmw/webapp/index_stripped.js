@@ -1241,7 +1241,7 @@ Module["expectedDataFileDownloads"]++;
 })();
 var moduleOverrides = Object.assign({}, Module);
 var arguments_ = [];
-Module["locateFile"] = (path) => "./g/dmw" + path;
+Module["locateFile"] = (path) => "/g/dmw" + path;
 var thisProgram = "./this.program";
 var quit_ = (status, toThrow) => {
   throw toThrow
