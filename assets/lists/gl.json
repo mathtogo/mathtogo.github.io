@@ -199,7 +199,7 @@
     "featured": true,
     "rating": 4.5
   },
-    {
+  {
     "name": "Cookie Clicker",
     "id": "CC",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -209,7 +209,7 @@
     "featured": false,
     "rating": 3.0
   },
-   {
+  {
     "name": "Core Ball",
     "id": "CB",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -219,8 +219,7 @@
     "featured": false,
     "rating": 3.0
   },
-
-     {
+  {
     "name": "Doge Miner",
     "id": "DM",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -230,7 +229,7 @@
     "featured": false,
     "rating": 1.5
   },
-       {
+  {
     "name": "CSGO Clicker",
     "id": "CSGO",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -240,7 +239,7 @@
     "featured": false,
     "rating": 1.0
   },
-        {
+  {
     "name": "Among Us",
     "id": "AU",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -250,7 +249,6 @@
     "featured": false,
     "rating": 2.5
   },
-  
   {
     "name": "Drift Boss",
     "id": "DB",
@@ -261,7 +259,7 @@
     "featured": false,
     "rating": 2.5
   },
-    {
+  {
     "name": "Edge Surf",
     "id": "ES",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -271,7 +269,7 @@
     "featured": false,
     "rating": 2.5
   },
-      {
+  {
     "name": "EuroCup",
     "id": "EC",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -281,8 +279,7 @@
     "featured": false,
     "rating": 4.5
   },
-  
-      {
+  {
     "name": "FactoryBallz",
     "id": "fbs",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -292,7 +289,7 @@
     "featured": false,
     "rating": 3.2
   },
-      {
+  {
     "name": "Gunspin",
     "id": "Gs",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -312,7 +309,7 @@
     "featured": false,
     "rating": 3.0
   },
-    {
+  {
     "name": "Monkey Mart",
     "id": "MM",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -322,7 +319,7 @@
     "featured": false,
     "rating": 1.5
   },
-     {
+  {
     "name": "OvO",
     "id": "OO",
     "description": "Explore, build, and survive in this iconic sandbox game. Play online through a hosted client.",
@@ -331,5 +328,245 @@
     "logo": "/g/OVO/IMG_1710.jpeg",
     "featured": false,
     "rating": 4.5
+  },
+  {
+    "id": "among-us",
+    "name": "Among-Us",
+    "url": "/g/among-us/",
+    "logo": "g/Among-Us/red.png"
+  },
+  {
+    "id": "ballisticchickens",
+    "name": "BallisticChickens",
+    "url": "/g/ballisticchickens/",
+    "logo": "g/BallisticChickens/logo.png"
+  },
+  {
+    "id": "basketball-random",
+    "name": "Basketball-random",
+    "url": "/g/basketball-random/",
+    "logo": "g/Basketball-random/splash.jpeg"
+  },
+  {
+    "id": "basketbros",
+    "name": "Basketbros",
+    "url": "/g/basketbros/",
+    "logo": "g/Basketbros/favicon.png"
+  },
+  {
+    "id": "csgo-clicker",
+    "name": "CSGO-Clicker",
+    "url": "/g/csgo-clicker/",
+    "logo": "g/CSGO-Clicker/csgo.png"
+  },
+  {
+    "id": "color-switch",
+    "name": "Color-Switch",
+    "url": "/g/color-switch/",
+    "logo": "g/Color-Switch/IMG_4622.jpeg"
+  },
+  {
+    "id": "cookie-clicker",
+    "name": "Cookie-Clicker",
+    "url": "/g/cookie-clicker/",
+    "logo": "g/Cookie-Clicker/logo.png"
+  },
+  {
+    "id": "coreball",
+    "name": "Coreball",
+    "url": "/g/coreball/",
+    "logo": "g/Coreball/pr_source.png"
+  },
+  {
+    "id": "defendthetank",
+    "name": "Defendthetank",
+    "url": "/g/defendthetank/",
+    "logo": "g/Defendthetank/landscape.jpg"
+  },
+  {
+    "id": "doge-miner",
+    "name": "Doge-Miner",
+    "url": "/g/doge-miner/",
+    "logo": "g/Doge-Miner/IMG_2926.jpeg"
+  },
+  {
+    "id": "driftboss",
+    "name": "Driftboss",
+    "url": "/g/driftboss/",
+    "logo": "g/Driftboss/drift-boss.png"
+  },
+  {
+    "id": "dunes",
+    "name": "Dunes",
+    "url": "/g/dunes/",
+    "logo": "g/Dunes/IMG_4615.jpeg"
+  },
+  {
+    "id": "edgesurf",
+    "name": "Edgesurf",
+    "url": "/g/edgesurf/",
+    "logo": "g/Edgesurf/splash.png"
+  },
+  {
+    "id": "eurocup",
+    "name": "EuroCup",
+    "url": "/g/eurocup/",
+    "logo": "g/EuroCup/favicon-16x16.png"
+  },
+  {
+    "id": "factoryballsforever",
+    "name": "FactoryBallsForever",
+    "url": "/g/factoryballsforever/",
+    "logo": "g/FactoryBallsForever/IMG_4784.jpeg"
+  },
+  {
+    "id": "flappy2048",
+    "name": "Flappy2048",
+    "url": "/g/flappy2048/",
+    "logo": "g/Flappy2048/IMG_2931.jpeg"
+  },
+  {
+    "id": "gunspin",
+    "name": "GunSpin",
+    "url": "/g/gunspin/",
+    "logo": "g/GunSpin/IMG_2653.jpeg"
+  },
+  {
+    "id": "idlebreakout",
+    "name": "IdleBreakout",
+    "url": "/g/idlebreakout/",
+    "logo": "g/IdleBreakout/IMG_0881.jpeg"
+  },
+  {
+    "id": "monkey-mart",
+    "name": "Monkey-mart",
+    "url": "/g/monkey-mart/",
+    "logo": "g/Monkey-mart/icon.png"
+  },
+  {
+    "id": "ovo",
+    "name": "OVO",
+    "url": "/g/ovo/",
+    "logo": "g/OVO/coin5.png"
+  },
+  {
+    "id": "paperio2",
+    "name": "Paperio2",
+    "url": "/g/paperio2/",
+    "logo": "g/Paperio2/IMG_4635.jpeg"
+  },
+  {
+    "id": "red-button",
+    "name": "Red-button",
+    "url": "/g/red-button/",
+    "logo": "g/Red-button/bigredbutton.png"
+  },
+  {
+    "id": "retro-bowl",
+    "name": "Retro-bowl",
+    "url": "/g/retro-bowl/",
+    "logo": "g/Retro-bowl/retro.png"
+  },
+  {
+    "id": "smallworldcup",
+    "name": "Smallworldcup",
+    "url": "/g/smallworldcup/",
+    "logo": "g/Smallworldcup/icon-256.png"
+  },
+  {
+    "id": "stickman-hook",
+    "name": "Stickman-hook",
+    "url": "/g/stickman-hook/",
+    "logo": "g/Stickman-hook/unnamed.jpg"
+  },
+  {
+    "id": "subwaysurfers",
+    "name": "Subwaysurfers",
+    "url": "/g/subwaysurfers/",
+    "logo": "g/Subwaysurfers/IMG_4627.jpeg"
+  },
+  {
+    "id": "swoop",
+    "name": "Swoop",
+    "url": "/g/swoop/",
+    "logo": "g/Swoop/swooop48.png"
+  },
+  {
+    "id": "territorial.io",
+    "name": "Territorial.io",
+    "url": "/g/territorial.io/",
+    "logo": "g/Territorial.io/IMG_2918.png"
+  },
+  {
+    "id": "tetris",
+    "name": "Tetris",
+    "url": "/g/tetris/",
+    "logo": "g/Tetris/IMG_4717.jpeg"
+  },
+  {
+    "id": "chromedino",
+    "name": "chromedino",
+    "url": "/g/chromedino/",
+    "logo": "g/chromedino/IMG_4722.jpeg"
+  },
+  {
+    "id": "ckc",
+    "name": "ckc",
+    "url": "/g/ckc/",
+    "logo": "g/ckc/IMG_2664_enhanced.jpeg.png"
+  },
+  {
+    "id": "drawhill",
+    "name": "drawhill",
+    "url": "/g/drawhill/",
+    "logo": "g/drawhill/IMG_4641.jpeg"
+  },
+  {
+    "id": "drive mad winter",
+    "name": "drive mad winter",
+    "url": "/g/drive mad winter/",
+    "logo": "g/drive mad winter/appstore.png"
+  },
+  {
+    "id": "learntoflyidle",
+    "name": "learntoflyidle",
+    "url": "/g/learntoflyidle/",
+    "logo": "g/learntoflyidle/icon.jpg"
+  },
+  {
+    "id": "pt",
+    "name": "pt",
+    "url": "/g/pt/",
+    "logo": "g/pt/pt.jpg"
+  },
+  {
+    "id": "rdh",
+    "name": "rdh",
+    "url": "/g/rdh/",
+    "logo": "g/rdh/image.png"
+  },
+  {
+    "id": "snowbattle",
+    "name": "snowbattle",
+    "url": "/g/snowbattle/",
+    "logo": "g/snowbattle/IMG_4643.jpeg"
+  },
+  {
+    "id": "tanukisunset",
+    "name": "tanukisunset",
+    "url": "/g/tanukisunset/",
+    "logo": "g/tanukisunset/IMG_4647.jpeg"
+  },
+  {
+    "id": "tinyfishing",
+    "name": "tinyfishing",
+    "url": "/g/tinyfishing/",
+    "logo": "g/tinyfishing/thumb.png"
+  },
+  {
+    "id": "wordle",
+    "name": "wordle",
+    "url": "/g/wordle/",
+    "logo": "g/wordle/IMG_4645.jpeg"
   }
 ]
