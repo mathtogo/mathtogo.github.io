@@ -20,7 +20,7 @@ Module["expectedDataFileDownloads"]++;
       PACKAGE_PATH = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf("/")) + "/")
     }
     var PACKAGE_NAME = "index_stripped.data";
-    var REMOTE_PACKAGE_BASE = "index_stripped.data";
+    var REMOTE_PACKAGE_BASE = "/g/dmw/webapp/index_stripped.data";
     if (typeof Module["locateFilePackage"] === "function" && !Module["locateFile"]) {
       Module["locateFile"] = Module["locateFilePackage"];
       err("warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)")
@@ -1241,6 +1241,7 @@ Module["expectedDataFileDownloads"]++;
 })();
 var moduleOverrides = Object.assign({}, Module);
 var arguments_ = [];
+Module["locateFile"] = (path) => "/g/dmw/webapp/" + path;
 var thisProgram = "./this.program";
 var quit_ = (status, toThrow) => {
   throw toThrow
